@@ -108,5 +108,5 @@
 
 变量名称：**ENABLE_CHANNEL_FORWARDING** 格式：默认为启用，设置为 false 即可禁用       变量说明：是否转发频道消息
 
-
+11.14:修复：删除话题后机器人与用户失联的问题 & 增强媒体回传支持#1 by PoemMistyMoon
 
