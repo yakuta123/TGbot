@@ -74,9 +74,9 @@
 
   设置 Webhook：使用以下 URL 调用 Telegram API，将您的 Worker URL 绑定到机器人。
 
-  https://api.telegram.org/bot](https://api.telegram.org/bot)<您的BOT_TOKEN>/setWebhook?url=<您的Worker的URL>
+  https://api.telegram.org/bot(https://api.telegram.org/bot)<您的BOT_TOKEN>/setWebhook?url=<您的Worker的URL>]
 
-  示例：https://api.telegram.org/bot123456:ABC-DEF/setWebhook?url=https://my-tg-worker.workers.dev
+  示例：https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=<WORKER_URL>
 
   
 🛠️**重要变量信息**
